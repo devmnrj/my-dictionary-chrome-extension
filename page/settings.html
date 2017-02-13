@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <title>My Dictionary</title>
+    <script type="text/javascript" src="/js/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="/js/function.js"></script>
+    <script type="text/javascript" defer="defer" src="/js/settings.js"></script>
+<style type="text/css">
+body{
+  background-color: #48c;
+  background-image: url(/res/background.jpg);
+}
+#options-form{
+  margin: 2rem auto;
+  width: 35rem;
+  padding: 5rem;
+  background-color: rgba(255, 255, 255, 1);
+  border-radius: 5px;
+  border: 1px gray solid;
+}
+#options-header{
+  text-align: right;
+  font-weight: 200;
+  color: #5f89e0;
+  border-bottom: solid 2px red;
+}
+.option-row{
+    list-style: none;
+    padding-top: 2rem;
+}
+.option-name{
+    font-weight: bold;
+    width: 10rem;
+    float: left;
+}
+label{
+    margin-left: 10rem;
+    display: block;
+}
+.option-value{
+}
+.button{
+    background-color: rgb(3, 112, 234);
+    border-color: #37d;
+    color: #FFF;
+
+    border: 1px solid transparent;
+    border-radius: 3px;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 13px;
+    padding: 1px 7px;
+    -webkit-user-select: none;
+    user-select: none;
+
+    height: 2rem;
+    width: 5rem;
+    margin: 0 auto;
+    vertical-align: bottom;
+}
+.options-button{
+  position: relative;
+  left: calc(100% - 5rem);
+}
+.options-button:active{
+    background-color: #da4132;
+}
+#log-line{
+  display: none;
+  text-align: center;
+  border: 0.5px gray solid;
+}
+
+#thank-banner{
+  position:fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  min-height: 100%;
+  background-color: white;
+  display: none;
+
+}
+#thank-banner h1{
+  text-align: center;
+  font-weight: 300;
+  line-height: 1.15;
+  font-size: 3.8em;
+  margin: 7rem 0px 0.3em;
+  color: rgb(0, 0, 0);
+}
+#thank-banner p{
+  text-align: center;
+  color: rgb(119, 119, 119);
+  line-height: 1.6;    
+  font-size: 18px;
+}
+#thank-banner button{
+  position: absolute;
+  right: 35px;
+  bottom: 60px;
+}
+</style>
+
+</head>
+
+<body>
+
+    <form id='options-form' name="options-form" action="">
+      <h1 id='options-header'>My Dictionary settings</h1>
+        <ul id='options-list'>
+            <li class="option-row">
+              <div class="option-name" >Language:</div>
+              <div class="option-value" >
+                  <select name='language-selector' id="language-selector">
+                    <option value="en">English</option>
+                  </select>
+                  <label for='language-selector'>Set the current language of the dictionary.</label>
+              </div>
+            </li>
+
+            <li class="option-row">
+              <div class="option-name" >Phonetic:</div>
+              <div class="option-value" >
+                  <select name='phonetic-selector' id="phonetic-selector">
+                    <option value="ipa">IPA (beta)</option>
+                    <option value="arb">Arpabet</option>
+                  </select>
+                  <label for='phonetic-selector'>Change the phonetic alphabet/symbol of the defined word.</label>
+              </div>
+            </li>
+          
+            <li class="option-row">
+                <div class="option-name">Say word:</div>
+                <div class="option-value">
+                    <input type="checkbox" checked="TRUE" name="say-word-checkbox" id="say-word-checkbox"/>
+                    <label for="say-word-checkbox">Say the defined word on pop-up display.</label>
+                </div>
+            </li>
+            
+            <li class="option-row">
+                <div class="option-name">Pop-up:</div>
+                <div class="option-value">
+                  <input type="checkbox" checked="TRUE" name="pop-checkbox" id="pop-checkbox"/>
+                  <span> + </span>
+                  <select name='popup-key-selector' id="popup-key-selector">
+                      <option value="">Trigger key none</option>
+                      <option value="ctrlKey">Ctrl</option>
+                      <option value="shiftKey">Shift</option>
+                      <option value="altKey">Alt</option>
+                  </select>
+                  <label for="pop-checkbox">Pop-up word definition when I doubled-click a word.</label>
+                </div>
+            </li>
+
+            <li class="option-row">
+                <div class="option-name">Display mode:</div>
+                <div class="option-value">
+                    <select name='display-mode-selector' id="display-mode-selector">
+                        <option value="#FEA">Sepia</option>
+                        <option value="#FFF">Normal</option>
+                    </select>
+                    <label for='display-mode-selector'>Change the display mode of the pop-up.</label>
+                </div>
+            </li>
+            <li class='option-row'>
+              <input class="button options-button" type="submit" value="Apply" />
+            </li>
+        </ul>
+
+        <p id='log-line'></p>
+
+        <p style='position:relative; text-align:center; margin:auto;'>©2015 My Dictionary</p>
+    </form>
+
+    <div id="thank-banner">
+      <h1 style="padding-bottom:30px;">Thank you for downloading My Dictionary</h1>
+      <p>I hope you like it<p>
+      <p style="position:absolute; width:100%; text-align:center; bottom:80px; font-size:14px; color:red;">The extension will not work on a tab that was opened before the installation. You need to refresh any previously opened tab so the extension can be loaded in.</p>
+      <button id="thank-banner-continue" class="button">continue</button>
+    </div>
+
+</body></html>
