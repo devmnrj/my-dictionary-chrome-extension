@@ -6,6 +6,10 @@
     var speech;
     var voices;
 
+    // The host and port we are running the server at:
+    const HOST = 'http://162.243.83.79';
+    const PORT = 2015;
+
     /*
     * The callback method to serve chrome extension messaging with the background page.
     * @param {Object} request The message sent.
@@ -69,8 +73,8 @@
                 "async":true,
                 "data": JSON.stringify(data),
                 "contentType": "application/json",
+                "url": `${HOST}:${PORT}`,
                 //"https://my-dictionary-server.herokuapp.com/",
-                "url": "http://localhost:8080",
                 //"url": "https://my-dictionary-server-143705.appspot.com",
                 "timeout": 10000,
                 "param": param,
@@ -114,7 +118,7 @@
                 "type": "GET",
                 "async":true,
                 "contentType": "application/json",
-                "url": "http://localhost:8080/suggestions?lemma=" + param.lemma,
+                "url": `${HOST}:${PORT}/suggestions?lemma=${param.lemma}`,
                 //"url": "https://my-dictionary-server-143705.appspot.com/suggestions?lemma=" + param.lemma,
                 "timeout": 10000,
                 success: callbackHolder.onSuccess.bind(callbackHolder),

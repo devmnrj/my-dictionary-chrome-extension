@@ -333,7 +333,7 @@
     myDictionary.init = function(callback){
         this.app_footer = [
             "<p style=' font-size:14.4px; margin:0; padding:5px; text-align:center;'>",
-                "© 2015 My Dictionary - <a style='color:black; font-weight: bold; text-decoration: none; word-wrap: break-word;' href='", this.urlParser("page/settings.html"), "' target='_blank'>Options</a>",
+                "© 2015-2021 My Dictionary - <a style='color:black; font-weight: bold; text-decoration: none; word-wrap: break-word;' href='", this.urlParser("page/settings.html"), "' target='_blank'>Options</a>",
                 "<a style='width:14.5px; float:right;' target='_blank' href='https://chrome.google.com/webstore/detail/jhehenajiifngcndnlecbmcdobnkeglb'>",
                     "<img src='" + this.urlParser("res/thumb-up.png") + "' style='width:inherit;'>", 
                 "</a>",
